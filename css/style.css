@@ -1,0 +1,408 @@
+@charset "utf-8";
+/* nip2pu@gmail.com */
+
+/* Global css */
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+}
+a {
+	text-decoration: none;
+}
+ul li {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+/* homepage css */	
+
+.bg {
+	background: #000 url(../images/bg.jpg) no-repeat center center fixed;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow: hidden;
+}
+#bg1 {
+	left: 5%;
+	position: absolute;
+	top: 21%;
+}
+#bg2 {
+	position: absolute;
+	right: 10%;
+	top: 40%;
+}
+.container-sun {
+	position: relative;
+	text-align: center;
+}
+.container-sun img {
+	border-radius: 50%;
+	left: 42.85%;
+	position: absolute;
+	top: 49.5%;
+}
+/* the svg element */
+.svg-sun {
+	width: 400px;
+	height: 400px;
+	margin-top: 15%;
+	-webkit-transform-origin: center center;
+	-moz-transform-origin: 50% 50%;
+	-o-transform-origin: center center;
+	-ms-transform-origin: center center;
+	transform-origin: 50% 50%;
+	-webkit-animation: spin 25s linear infinite, sun-glow 3s 0s linear infinite;
+	-moz-animation: spin 25s linear infinite, sun-glow 3s 0s linear infinite;
+	-o-animation: spin 25s linear infinite, sun-glow 3s 0s linear infinite;
+	-ms-animation: spin 25s linear infinite, sun-glow 3s 0s ease-in-out infinite;
+	animation: spin 25s linear infinite, sun-glow 3s 0s linear infinite;
+}
+/* the circle element in the svg itself */
+#sun {
+	stroke-width: 22;
+	stroke-dasharray: 1;
+	stroke-dashoffset: 1;
+}
+/* animation for the sun glowing effect */
+@-webkit-keyframes sun-glow {
+ 0% {
+fill: #f1c40f;
+stroke:#f1c40f;
+}
+ 50% {
+fill: #e67e22;
+stroke:#e67e22;
+}
+ 100% {
+fill: #f1c40f;
+stroke:#f1c40f;
+}
+}
+@-moz-keyframes sun-glow {
+ 0% {
+fill: #f1c40f;
+stroke:#f1c40f;
+}
+ 50% {
+fill: #e67e22;
+stroke:#e67e22;
+}
+ 100% {
+fill: #f1c40f;
+stroke:#f1c40f;
+}
+}
+@-o-keyframes sun-glow {
+ 0% {
+fill: #f1c40f;
+stroke:#f1c40f;
+}
+ 50% {
+fill: #e67e22;
+stroke:#e67e22;
+}
+ 100% {
+fill: #f1c40f;
+stroke:#f1c40f;
+}
+}
+@-ms-keyframes sun-glow {
+ 0% {
+fill: #f1c40f;
+stroke:#f1c40f;
+}
+ 50% {
+fill: #e67e22;
+stroke:#e67e22;
+}
+ 100% {
+fill: #f1c40f;
+stroke:#f1c40f;
+}
+}
+@keyframes sun-glow {
+ 0% {
+fill: #f1c40f;
+stroke:#f1c40f;
+}
+ 50% {
+fill: #e67e22;
+stroke:#e67e22;
+}
+ 100% {
+fill: #f1c40f;
+stroke:#f1c40f;
+}
+}
+
+/* start spin animation */
+@-webkit-keyframes spin {
+ 100% {
+ -webkit-transform: rotate(360deg);
+}
+}
+@-moz-keyframes spin {
+ 100% {
+ -moz-transform: rotate(360deg);
+}
+}
+@-o-keyframes spin {
+ 100% {
+ -o-transform: rotate(360deg);
+}
+}
+@-ms-keyframes spin {
+ 100% {
+ -ms-transform: rotate(360deg);
+}
+}
+@keyframes spin {
+ 100% {
+ transform: rotate(360deg);
+}
+}
+.title-maa h1 {
+	font-family: Tahoma, Geneva, sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 40px;
+	color: #fff;
+	text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+}
+.title-maa p{
+	padding-top: 15px;
+	font-family: Tahoma, Geneva, sans-serif;
+	text-align: center;
+	font-size: 15px;
+	color: #fff;
+}
+.snow-canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	pointer-events: none;
+}
+.star {
+	display: block;
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 24px;
+	height: 24px;
+	overflow: hidden;
+	z-index: 2;
+	animation: glitter 2.5s linear 0s infinite normal;
+	-webkit-animation: glitter 2.5s linear 0s infinite normal;
+	-moz-animation: glitter 2.5s linear 0s infinite normal;
+	-ms-animation: glitter 2.5s linear 0s infinite normal;
+	-o-animation: glitter 2.5s linear 0s infinite normal;
+}
+.star-top, .star-bottom {
+	position: relative;
+	display: block;
+}
+.star-top:before, .star-top:after, .star-bottom:before, .star-bottom:after {
+	content: "";
+	width: 37px;
+	height: 45px;
+	background: url(../images/star.png) no-repeat;
+	opacity: 0.9px;
+	border-radius: 25%;
+	position: absolute;
+}
+/*CSS3 pseudo class for positioning curves*/
+.star-top:before {
+	top: -6px;
+	left: -6px;
+}
+.star-top:after {
+	bottom: -6px;
+	left: 6px;
+}
+.star-bottom:before {
+	top: 6px;
+	left: -6px;
+}
+.star-bottom:after {
+	top: 6px;
+	left: 20px;
+}
+/*css3 keyframes for glittering effect*/
+@-moz-keyframes glitter {
+ 0% {
+-moz-transform: scale(1.0);
+opacity: 1;
+}
+ 25% {
+-moz-transform: scale(0.5);
+opacity: 0;
+}
+ 50% {
+-moz-transform: scale(1.0);
+opacity: 1;
+}
+ 75% {
+-moz-transform: scale(0.5);
+opacity: 0;
+}
+ 100% {
+-moz-transform: scale(1.0);
+opacity: 1;
+}
+}
+@-webkit-keyframes glitter {
+ 0% {
+-webkit-transform: scale(1.0);
+opacity: 1;
+}
+ 25% {
+-webkit-transform: scale(0.5);
+opacity: 0;
+}
+ 50% {
+-webkit-transform: scale(1.0);
+opacity: 1;
+}
+ 75% {
+-webkit-transform: scale(0.5);
+opacity: 0;
+}
+ 100% {
+-webkit-transform: scale(1.0);
+opacity: 1;
+}
+}
+.bg-song {
+	display: none;
+}
+.btn-enter {
+	background-color: #f1c40f;
+	width: 130px;
+	margin: 0px auto;
+	text-align: center;
+	margin-top: 30px;
+	border-radius: 12px;
+ -moz- border-radius:12px;
+ -webkit-- border-radius:12px;
+}
+.btn-enter a {
+	padding: 10px;
+	display: block;
+	font-size: 20px;
+	color: #fff;
+}
+.btn-enter a:hover {
+	background-color: #900;
+	border-radius: 12px;
+ -moz- border-radius:12px;
+ -webkit-- border-radius:12px;
+}
+
+@media only screen and (max-width: 1366px) {
+.container-sun img {
+	left: 40.1%;
+	top: 42.8%;
+}
+}
+
+@media only screen and (max-width: 1366px) {
+.container-sun img {
+	left: 39.3%;
+	top: 41.8%;
+}
+}
+
+@media only screen and (max-width: 1024px) {
+.container-sun img {
+    left: 36.8%;
+    top: 44.8%;
+}
+	.svg-sun{
+		margin-top: 22%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+.container-sun img {
+    left: 32.6%;
+    top: 50.8%;
+}
+.svg-sun{
+	margin-top: 40%;
+}
+}
+
+@media only screen and (max-width: 740px) {
+.container-sun img {
+	left: 37.3%;
+	top: 41.8%;
+	width: 26%;
+}
+.svg-sun {
+	width: 280px;
+	height: 280px;
+	margin-top: 15%;
+}
+	.title-maa h1 {
+	font-size: 30px;
+}
+}
+
+@media only screen and (max-width: 640px) {
+.svg-sun {
+	width: 250px;
+	height: 250px;
+	margin-top: 18%;
+}
+.container-sun img {
+	left: 36.5%;
+	top: 40%;
+	width: 27%;
+}
+.title-maa h1 {
+	font-size: 30px;
+}
+}
+
+@media only screen and (max-width: 414px) {
+.container-sun img {
+	left: 22.5%;
+	top: 52%;
+	width: 55%;
+}
+.svg-sun {
+	width: 330px;
+	height: 330px;
+	margin-top: 65%;
+}
+}
+
+@media only screen and (max-width: 360px) {
+.svg-sun {
+	width: 320px;
+	height: 320px;
+	margin-top: 55%;
+}
+.container-sun img {
+	left: 20.3%;
+	top: 46.8%;
+	width: 60%;
+}
+.title-maa h1 {
+	font-size: 30px;
+}
+}
